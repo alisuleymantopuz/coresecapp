@@ -1,0 +1,43 @@
+﻿@using CoreSecurity.Web.ViewModels
+@model RegisterViewModel
+
+<h1>Register</h1>
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.UserName)</td>
+            <td>@Html.TextBoxFor(x => x.UserName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.Password)</td>
+            <td>@Html.PasswordFor(x => x.Password)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.ConfirmPassword)</td>
+            <td>@Html.PasswordFor(x => x.ConfirmPassword)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.Email)</td>
+            <td>@Html.TextBoxFor(x => x.Email)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.FirstName)</td>
+            <td>@Html.TextBoxFor(x => x.FirstName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.LastName)</td>
+            <td>@Html.TextBoxFor(x => x.LastName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.BirthDate)</td>
+            <td>@Html.TextBoxFor(x => x.BirthDate)</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Register" /> 
+            </td>
+        </tr>
+    </table>
+    <div asp-validation-summary="All"></div>
+}

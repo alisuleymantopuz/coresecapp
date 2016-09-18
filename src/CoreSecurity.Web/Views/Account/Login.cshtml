@@ -1,0 +1,27 @@
+﻿@using CoreSecurity.Web.ViewModels
+@model LoginViewModel
+<h1>Login</h1>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.UserName)</td>
+            <td>@Html.TextBoxFor(x => x.UserName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.Password)</td>
+            <td>@Html.PasswordFor(x => x.Password)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(x => x.RememberMe)</td>
+            <td>@Html.CheckBoxFor(x => x.RememberMe)</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Login" />  | @Html.ActionLink("Register", "Register", "Account")
+            </td>
+        </tr>
+    </table>
+    <div asp-validation-summary="All"></div>
+}
